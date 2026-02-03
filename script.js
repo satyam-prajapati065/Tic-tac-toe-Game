@@ -1,6 +1,7 @@
 const boxes = document.querySelectorAll(".box");
 const resetBtn = document.querySelector(".reset");
 const newGame = document.querySelector(".newGame");
+const msg_text = document.querySelector(".msg-text");
 
 turnO = true;
 const chance = [
@@ -18,6 +19,7 @@ resetBtn.addEventListener("click", resetGame)
 newGame.addEventListener("click", resetGame)
 function resetGame(){
     turnO = true;
+    msg_text.innerText = "";
     enableBtn();
 }
 
@@ -25,6 +27,7 @@ function enableBtn(){
     for(let box of boxes){
         box.disabled = false;
         box.innerText = "";
+        box.style.backgroundColor = "white"
     }
 }
 
@@ -33,9 +36,11 @@ boxes.forEach((box) => {
     box.addEventListener("click",()=>{
         if(turnO){
             box.innerText = "O";
+            box.style.color = "green"
             turnO = false;
         }else{
             box.innerText = "X";
+            box.style.color = "blue"
             turnO = true;
         }
         box.disabled = true;
@@ -47,11 +52,12 @@ boxes.forEach((box) => {
 function disableBtn(){
     for(let box of boxes){
         box.disabled = true;
+        box.style.backgroundColor = "rgb(202, 203, 203);"
     }
 }
 
 function MessageWin(win1){
-    console.log("Winner",win1)
+    msg_text.innerText =win1 + " is Winner";
     disableBtn();
 }
 
@@ -63,7 +69,19 @@ const checkWin = ()=>{
         if(pos1 != "" && pos2 != "" && pos3 != ""){
             if(pos1 == pos2 && pos2 == pos3){
                 MessageWin(pos1);
+                boxes[pattern[0]].style.backgroundColor = "rgb(247, 50, 50)"
+                boxes[pattern[1]].style.backgroundColor = "rgb(247, 50, 50)"
+                boxes[pattern[2]].style.backgroundColor = "rgb(247, 50, 50)"
             }
         }
     }
 }
+
+//Disable code reading----------------->
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+document.onkeydown = function(e) {
+    if (e.keyCode == 123 || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
+        return false;
+    }
+};

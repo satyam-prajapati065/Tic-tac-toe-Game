@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tic Toc Toe</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button class="newGame">New Game</button>
+    <span class="game-name">Tic Toc Toe</span>
+    <div class="msg-box">
+        <marquee behavior="alternate" direction="left" scrollamount="10" class="msg-text"></marquee>
+    </div>
     <div class="main">
         <button class="box"></button>
         <button class="box"></button>
@@ -19,7 +22,10 @@
         <button class="box"></button>
         <button class="box"></button>
     </div>
-    <button class="reset">Reset</button>
+    <div class="button-box">
+        <button class="reset btn">Reset</button>
+        <button class="newGame btn">New Game</button>
+    </div>
 </body>
 <script src="script.js"></script>
 </html>

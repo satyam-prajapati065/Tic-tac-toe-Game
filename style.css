@@ -1,8 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+body{
+    height: 100vh;
+    width: 100cw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: aqua;
+}
+.game-name{
+    position: absolute;
+    top: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.msg-box{
+    width: 400px;
+    height: 50px;
+}
+marquee{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+    color: red;
+    font-weight: bold;
+}
 .main{
     height: 400px;
     width: 400px;
     display: flex;
-    border: 1px solid red;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
@@ -10,4 +42,35 @@
 .box{
     height:30%;
     width: 30%;
+    font-size: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0px 0px 5px gray;
+    cursor: pointer;
+}
+.btn{
+    height: 40px;
+    width: 150px;
+    margin: 1rem;
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.9rem;
+}
+.btn:hover{
+    box-shadow: 0px 0px 5px gray;
+    cursor: pointer;
+}
+.reset{
+    background-color: red;
+}
+.reset:hover{
+    background-color: rgb(214, 3, 3);
+}
+.newGame{
+    background-color: green;
+}
+.newGame:hover{
+    background-color: rgb(1, 111, 1);
 }
