@@ -1,0 +1,13 @@
+.main{
+    height: 400px;
+    width: 400px;
+    display: flex;
+    border: 1px solid red;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.box{
+    height:30%;
+    width: 30%;
+}
